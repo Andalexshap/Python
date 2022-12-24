@@ -1,18 +1,23 @@
 '''
-2. Напишите программу, которая на вход принимает 5 чисел и находит максимальное из них.
-
-Примеры:
-- 1, 4, 8, 7, 5 -> 8
-- 78, 55, 36, 90, 2 -> 90
+Вывести на экран числа от -N до N
 '''
-list_of_numbers = []
-for i in range(5):
-    count = i + 1
-    number = int(input(f"Введите {count}-е число:"))
-count = 1
-maximal = list_of_numbers[0]
-while(count == 4):
-    if(list_of_numbers[count]>maximal):
-        maximal = list_of_numbers[count]
 
-print(f"Максимальное число {maximal}")
+def InputNumber(message):
+    while True:
+        try:
+            number = int(input(f"{message}: "))
+            break
+        except ValueError:
+            print("Это не число!")
+    return number
+
+def list_of_number(n):
+    new_list = []
+    count = -n
+    while count<=n:
+        new_list.append(count)
+        count +=1
+    return new_list
+
+number = InputNumber("Введите число")
+print(f"Последовательность чисел от -{number} до {number} равна: {list_of_number(number)}")

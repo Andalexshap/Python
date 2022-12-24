@@ -22,7 +22,7 @@ def convert_float_from_dec_to_bin(number):
     count = 0
     while fractional_part*2 != 0 and count != 20:
         new_str += str(int(fractional_part*2))
-        fractional_part = (fractional_part*2) % 1
+        fractional_part = round((fractional_part*2) % 1, 3)
         count += 1
     else:
         return new_str
